@@ -183,6 +183,42 @@ Resposta `201 Created` (cabeçalho `Location: /atracoes/9`):
 }
 ```
 
+### Outros exemplos de requisição
+
+```http
+GET /atracoes?categoria=Natureza%20e%20Aventura
+GET /atracoes?tag=cachoeira
+GET /atracoes?q=rio
+GET /atracoes/1
+GET /categorias
+```
+
+```http
+PUT /atracoes/9
+Content-Type: application/json
+
+{
+  "nome": "Atração de teste atualizada",
+  "descricao": "Registro atualizado para testar o PUT.",
+  "categoria": "Lazer",
+  "distanciaCentroKm": 6,
+  "tags": ["atualizada", "família"]
+}
+```
+
+```http
+POST /atracoes/9/avaliacoes
+Content-Type: application/json
+
+{ "visitante": "Visitante de teste", "nota": 5, "comentario": "Teste de avaliação." }
+```
+
+```http
+DELETE /atracoes/9
+```
+
+Uma consulta a uma atração inexistente, como `GET /atracoes/9999`, responde `404` com `{ "erro": "Atração não encontrada" }`. A exclusão bem-sucedida responde `204`, sem corpo.
+
 ## Publicação
 
 A API está publicada no Render, com o banco no Neon:
