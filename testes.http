@@ -1,8 +1,4 @@
 @base = http://localhost:3000
-
-### 1. Health (200)
-GET {{base}}/health
-
 ### 2. Listar atrações (200, 8 atrações)
 GET {{base}}/atracoes
 
