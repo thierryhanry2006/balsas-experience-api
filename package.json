@@ -1,0 +1,28 @@
+{
+  "name": "balsas-experience-api",
+  "version": "1.0.0",
+  "description": "API REST de experiências turísticas em Balsas-MA, com PostgreSQL e Prisma ORM",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch-path=./src src/app.js",    "start": "node src/app.js",
+    "seed": "node prisma/seed.js",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "db:deploy": "prisma migrate deploy",
+    "db:studio": "prisma studio"
+  },
+  "dependencies": {
+    "@prisma/adapter-pg": "7.10.0",
+    "@prisma/client": "7.10.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "pg": "^8.16.3"
+  },
+  "devDependencies": {
+    "prisma": "7.10.0"
+  },
+  "allowScripts": {
+    "prisma@7.10.0": true,
+    "@prisma/engines@7.10.0": true
+  }
+}
