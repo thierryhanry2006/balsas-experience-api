@@ -4,7 +4,9 @@
   "description": "API REST de experiências turísticas em Balsas-MA, com PostgreSQL e Prisma ORM",
   "type": "module",
   "scripts": {
-    "dev": "node --watch-path=./src src/app.js",    "start": "node src/app.js",
+    "dev": "node --watch-path=./src src/app.js",    
+    "start": "node src/app.js",
+    "build": "prisma generate && prisma migrate deploy",
     "seed": "node prisma/seed.js",
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev",

@@ -28,7 +28,7 @@ app.use((erro, req, res, next) => {
   res.status(erro.status || 500).json({ erro: (erro.status && erro.status < 500) ? erro.message : 'Erro interno no servidor' });
 });
 
-const server = app.listen(PORTA, () => console.log(`Balsas Experience API rodando em http://localhost:${PORTA}`));
+const server = app.listen(PORTA, '0.0.0.0', () => console.log(`Balsas Experience API rodando na porta ${PORTA}`));
 async function encerrar() {
   server.close(async () => { await prisma.$disconnect(); process.exit(0); });
 }
